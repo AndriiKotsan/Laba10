@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container::before{
+    content: '';
+    position: fixed;
+    filter: blur(2px);
+    width: 101%;
+    height: 101%;
+    background-image: url('img/back.jpg');
+    background-size: cover;
+    z-index: -1;
+}
+
+form{
+    width: 520px;
+    height: 320px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 10px 2px rgb(102, 70, 70);
+    background-color: #fff;
+
+}
+
+.input-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "email user"
+      "password confirm";
+  }
+  #email { grid-area: email; }
+  #user { grid-area: user; }
+  #password { grid-area: password; }
+  #confirm { grid-area: confirm; }
+
+
+.field{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.inp-field {
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+    width: 100%;
+}
+
+.field.error label{
+    color: rgb(168, 45, 45);
+}
+
+.field.error .inp-field{
+    border: 1px solid rgb(168, 45, 45);
+}
+
+.field.error.error .error-msg{
+    display: block;
+}
+
+.error-msg{
+    display: none;
+    font-size: 12px;
+    color: rgb(168, 45, 45);
+    margin-top: 3px;
+}
+
+#sbm-btn{
+    border: 0;
+    height: 35px;
+    background-color: rgb(102, 78, 78);
+    color: #fff;
+    outline: none;
+    transition: .2s linear;
+}
+
+#sbm-btn:hover{
+    cursor: pointer;
+    background-color: rgb(75, 57, 57);
+}
+
+h1{
+    color: rgb(75, 57, 57);
+}
+
+#login{
+    align-self: flex-end;
+    font-size: 12px;
+    color: rgb(75, 57, 57);
+}
